@@ -52,18 +52,23 @@
             // 
             // title_textBox
             // 
-            title_textBox.Location = new Point(107, 24);
+            title_textBox.Location = new Point(113, 24);
             title_textBox.Name = "title_textBox";
             title_textBox.Size = new Size(395, 31);
             title_textBox.TabIndex = 1;
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(610, 24);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
+            dataGridView1.ShowCellErrors = false;
             dataGridView1.Size = new Size(472, 412);
             dataGridView1.TabIndex = 2;
             // 
@@ -71,7 +76,7 @@
             // 
             notes_label.AutoSize = true;
             notes_label.Font = new Font("Sitka Heading", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            notes_label.Location = new Point(26, 85);
+            notes_label.Location = new Point(26, 80);
             notes_label.Name = "notes_label";
             notes_label.Size = new Size(75, 35);
             notes_label.TabIndex = 3;
@@ -94,6 +99,7 @@
             new_button.TabIndex = 5;
             new_button.Text = "New";
             new_button.UseVisualStyleBackColor = false;
+            new_button.Click += new_button_Click;
             // 
             // save_button
             // 
@@ -104,6 +110,7 @@
             save_button.TabIndex = 6;
             save_button.Text = "Save";
             save_button.UseVisualStyleBackColor = false;
+            save_button.Click += save_button_Click;
             // 
             // read_button
             // 
@@ -114,6 +121,7 @@
             read_button.TabIndex = 7;
             read_button.Text = "Read";
             read_button.UseVisualStyleBackColor = false;
+            read_button.Click += read_button_Click;
             // 
             // dlt_button
             // 
@@ -124,6 +132,7 @@
             dlt_button.TabIndex = 8;
             dlt_button.Text = "Delete";
             dlt_button.UseVisualStyleBackColor = false;
+            dlt_button.Click += dlt_button_Click;
             // 
             // Form1
             // 
@@ -142,6 +151,7 @@
             Controls.Add(title_label);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
